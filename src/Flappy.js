@@ -4,7 +4,7 @@ import bird from "./sprites/birdy.png"
 import bg from "./sprites/bg.jpg"
 import pipe from "./sprites/pipe.png"
 
-let { loadSprite, add, pos, area, body, sprite, scale, keyDown, height, width, debug, origin } = kaboom()
+let { onClick, action, loadSprite, add, pos, area, body, sprite, scale, keyDown, height, width, debug, origin, rand } = kaboom()
 
 export default function Flappy() {
   loadSprite("bg", bg)
@@ -28,17 +28,27 @@ export default function Flappy() {
   // pipe 
   const Pipe_gap = 100
   const center = height() / 2
+  const ran = rand(-50, 50)
   add([
     sprite("pipe", { width: 150, flipY: true }),
-    pos(width() - 200, center - Pipe_gap / 2),
-    origin("botleft")
+    pos(width() - 200, center - Pipe_gap / 2 + ran),
+    origin("botleft"),
+    // move(LEFT, 240)
+    area(),
+    "pipe"
   ])
 
   add([
     sprite("pipe", { width: 150 }),
-    pos(width() - 200, center + Pipe_gap / 2),
-    // origin("topleft")
+    pos(width() - 200, center + Pipe_gap / 2 + ran),
+    area(),
+    "pipe"
+    // move(LEFT, 240)
   ])
+
+  action("pipe", pipe => {
+    pipe.move(-250, 0)
+  });
 
   // key down event
   keyDown("space", () => {
