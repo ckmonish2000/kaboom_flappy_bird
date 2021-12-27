@@ -12,8 +12,6 @@ function App() {
   const player = app.add([
     app.sprite("bean"),
     app.pos(80, 40),
-    app.scale(3),
-    app.rotate(35),
     app.color(0, 0, 255),
     app.area(),
     app.body()
@@ -21,13 +19,16 @@ function App() {
 
   const platform = app.add([
     app.rect(app.width(), 200),
-    app.pos(0, app.height() - 40),
+    app.pos(0, app.height() - 50),
     app.area(),
-    app.solid()
+    app.solid(),
+    app.color(127, 200, 255),
   ])
 
   app.onKeyPress("space", () => {
-    player.jump()
+    if (player.isGrounded()) {
+      player.jump();
+    }
   })
   return <></>
 }
