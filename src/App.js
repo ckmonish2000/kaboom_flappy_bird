@@ -1,15 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import kaboom from "kaboom";
+import logo from "./sprites/logo.svg"
 
 function App() {
 
   const app = kaboom()
 
+  // load assets
+  app.loadSprite("bean", logo)
+
   app.add([
-    app.text("hello"),
-    app.pos(120, 80),
-  ]);
+    app.sprite("bean"),
+    app.pos(80, 40),
+  ])
   return (
     <div></div>
   );
