@@ -82,12 +82,12 @@ export default function Flappy() {
     loop(1.5, producepipes)
 
 
-    // char.action(() => {
-    //   if (char.pos.y > height() + 40 ||
-    //     char.pos.y - 30 < 0) {
-    //     go("gameover")
-    //   }
-    // })
+    char.action(() => {
+      if (char.pos.y < 0 || char.pos.y > height()) {
+        go("gameover")
+      }
+      debug.log(height(), char.pos.y)
+    })
 
 
 
