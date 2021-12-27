@@ -9,10 +9,12 @@ export default function Flappy() {
   loadSprite("bg", bg)
   loadSprite("bird", bird)
 
+  // background
   const bgz = add(
     [sprite("bg", { width: width(), height: height() })]
   )
 
+  // birdy
   const char = add([
     sprite("bird", { width: 90 }),
     pos(80, 10),
@@ -21,8 +23,10 @@ export default function Flappy() {
   ])
 
 
+  // key down event
   keyDown("space", () => {
     char.jump()
   })
+
   return <></>
 }
