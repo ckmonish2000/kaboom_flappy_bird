@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Flappy from './Flappy';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Flappy />
   </React.StrictMode>,
   document.getElementById('root')
 );
