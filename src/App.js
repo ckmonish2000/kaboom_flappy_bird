@@ -9,13 +9,20 @@ function App() {
   // load assets
   app.loadSprite("bean", logo)
 
-  app.add([
+  const player = app.add([
     app.sprite("bean"),
     app.pos(80, 40),
+    app.scale(3),
+    app.rotate(35),
+    app.color(0, 0, 255),
+    app.area(),
+    app.body()
   ])
-  return (
-    <div></div>
-  );
+
+  app.onKeyPress("space", () => {
+    player.jump()
+  })
+  return <></>
 }
 
 export default App;
