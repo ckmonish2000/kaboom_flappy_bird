@@ -55,5 +55,9 @@ export default function Flappy() {
     char.jump()
   })
 
+
+  char.collides("pipe", () => {
+    console.log("collision")
+  })
   return <></>
 }
