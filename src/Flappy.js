@@ -27,7 +27,7 @@ export default function Flappy() {
 
   const pip = add([
     sprite("pipe"),
-    pos(width() - 50, 0)
+    pos(width() - 200, 150)
   ])
 
 
