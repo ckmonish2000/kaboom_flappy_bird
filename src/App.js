@@ -19,6 +19,13 @@ function App() {
     app.body()
   ])
 
+  const platform = app.add([
+    app.rect(app.width(), 200),
+    app.pos(0, app.height() - 40),
+    app.area(),
+    app.solid()
+  ])
+
   app.onKeyPress("space", () => {
     player.jump()
   })
